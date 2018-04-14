@@ -39,6 +39,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.Driver_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Driver_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Driver_Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Driver_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Driver_BairthDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Driver_License = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Driver_NationalID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Driver_StartWorkDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDelete = new Bunifu.Framework.UI.BunifuTileButton();
@@ -48,14 +56,6 @@
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.Driver_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Driver_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Driver_Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Driver_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Driver_BairthDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Driver_License = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Driver_NationalID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Driver_StartWorkDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tLPanProductsContainer.SuspendLayout();
             this.tLPanFilter.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -231,6 +231,51 @@
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // Driver_ID
+            // 
+            this.Driver_ID.HeaderText = "كود السواق";
+            this.Driver_ID.Name = "Driver_ID";
+            // 
+            // Driver_Name
+            // 
+            this.Driver_Name.HeaderText = "أسم السائق";
+            this.Driver_Name.Name = "Driver_Name";
+            // 
+            // Driver_Phone
+            // 
+            this.Driver_Phone.HeaderText = "التلفون";
+            this.Driver_Phone.Name = "Driver_Phone";
+            this.Driver_Phone.Width = 120;
+            // 
+            // Driver_Address
+            // 
+            this.Driver_Address.HeaderText = "العنوان";
+            this.Driver_Address.Name = "Driver_Address";
+            // 
+            // Driver_BairthDate
+            // 
+            this.Driver_BairthDate.HeaderText = "تاريخ الميلاد";
+            this.Driver_BairthDate.Name = "Driver_BairthDate";
+            this.Driver_BairthDate.Width = 130;
+            // 
+            // Driver_License
+            // 
+            this.Driver_License.HeaderText = "الرخصة";
+            this.Driver_License.Name = "Driver_License";
+            this.Driver_License.Width = 130;
+            // 
+            // Driver_NationalID
+            // 
+            this.Driver_NationalID.HeaderText = "الرقم القومي";
+            this.Driver_NationalID.Name = "Driver_NationalID";
+            this.Driver_NationalID.Width = 130;
+            // 
+            // Driver_StartWorkDate
+            // 
+            this.Driver_StartWorkDate.HeaderText = "تاريخ بدء العمل";
+            this.Driver_StartWorkDate.Name = "Driver_StartWorkDate";
+            this.Driver_StartWorkDate.Width = 130;
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
@@ -405,51 +450,6 @@
             this.label2.Size = new System.Drawing.Size(73, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "السائقين";
-            // 
-            // Driver_ID
-            // 
-            this.Driver_ID.HeaderText = "كود السواق";
-            this.Driver_ID.Name = "Driver_ID";
-            // 
-            // Driver_Name
-            // 
-            this.Driver_Name.HeaderText = "أسم السائق";
-            this.Driver_Name.Name = "Driver_Name";
-            // 
-            // Driver_Phone
-            // 
-            this.Driver_Phone.HeaderText = "التلفون";
-            this.Driver_Phone.Name = "Driver_Phone";
-            this.Driver_Phone.Width = 120;
-            // 
-            // Driver_Address
-            // 
-            this.Driver_Address.HeaderText = "العنوان";
-            this.Driver_Address.Name = "Driver_Address";
-            // 
-            // Driver_BairthDate
-            // 
-            this.Driver_BairthDate.HeaderText = "تاريخ الميلاد";
-            this.Driver_BairthDate.Name = "Driver_BairthDate";
-            this.Driver_BairthDate.Width = 130;
-            // 
-            // Driver_License
-            // 
-            this.Driver_License.HeaderText = "الرخصة";
-            this.Driver_License.Name = "Driver_License";
-            this.Driver_License.Width = 130;
-            // 
-            // Driver_NationalID
-            // 
-            this.Driver_NationalID.HeaderText = "الرقم القومي";
-            this.Driver_NationalID.Name = "Driver_NationalID";
-            this.Driver_NationalID.Width = 130;
-            // 
-            // Driver_StartWorkDate
-            // 
-            this.Driver_StartWorkDate.HeaderText = "تاريخ بدء العمل";
-            this.Driver_StartWorkDate.Name = "Driver_StartWorkDate";
-            this.Driver_StartWorkDate.Width = 130;
             // 
             // Drivers
             // 

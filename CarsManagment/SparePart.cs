@@ -15,6 +15,8 @@ namespace CarsManagment
     {
         MySqlConnection dbconnection;
         DataGridViewRow row = null;
+        SparePartRecord sparePartRecord = null;
+        SparePartUpdate sparePartUpdate = null;
         public SparePart()
         {
             InitializeComponent();
@@ -33,14 +35,21 @@ namespace CarsManagment
             }
             dbconnection.Close();
         }
-   
-
-        private void btnUpdateStore_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
-               // Store_Update f = new Store_Update(1);
-               // f.Show();
+                if (sparePartRecord == null)
+                {
+                    sparePartRecord = new SparePartRecord();
+                    sparePartRecord.Show();
+                    sparePartRecord.Focus();
+                }
+                else
+                {
+                    sparePartRecord.Show();
+                    sparePartRecord.Focus();
+                }
             }
             catch (Exception ex)
             {
@@ -48,7 +57,36 @@ namespace CarsManagment
             }
         }
 
-        private void btnDeleteStore_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (sparePartUpdate == null)
+                {
+                    if (row != null)
+                    {
+                        sparePartUpdate = new SparePartUpdate(row);
+                        sparePartUpdate.Show();
+                        sparePartUpdate.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Select row");
+                    }
+                }
+                else
+                {
+                    sparePartUpdate.Show();
+                    sparePartUpdate.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
@@ -58,7 +96,7 @@ namespace CarsManagment
                     if (dialogResult == DialogResult.Yes)
                     {
                         dbconnection.Open();
-                        string Query = "delete from store where Store_ID=" + row.Cells[0].Value;
+                        string Query = "delete from sparepart where SparePart_ID=" + row.Cells[0].Value;
                         MySqlCommand MyCommand = new MySqlCommand(Query, dbconnection);
                         MyCommand.ExecuteNonQuery();
                         // MessageBox.Show("Delete Done");
@@ -92,34 +130,7 @@ namespace CarsManagment
             }
         }
 
-        private void btnAddStorePlaces_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (row != null)
-                {
-                    //if (storePlaces == null)
-                    //{
-                    //    storePlaces = new StorePlaces(row);
-                    //    storePlaces.Show();
-                    //}
-                    //else
-                    //{
-                    //    storePlaces.Close();
-                    //    storePlaces = new StorePlaces(row);
-                    //    storePlaces.Show();
-                    //}
-                }
-                else
-                {
-                    MessageBox.Show("Select Row");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+      
 
         //functions
         //display stores
@@ -145,16 +156,15 @@ namespace CarsManagment
             {
                 dbconnection.Open();
                 dataGridView1.Rows.Clear();
-                String query = "select * from store where Store_Name like'" + txtSearch.Text + "%'";
+                String query = "select * from sparepart where SparePart_Name like'" + txtSearch.Text + "%'";
                 MySqlCommand com = new MySqlCommand(query, dbconnection);
                 MySqlDataReader dr = com.ExecuteReader();
                 while (dr.Read())
                 {
                     int n = dataGridView1.Rows.Add();
-                    dataGridView1.Rows[n].Cells["Store_ID"].Value = dr[0].ToString();
-                    dataGridView1.Rows[n].Cells["Store_Name"].Value = dr[1].ToString();
-                    dataGridView1.Rows[n].Cells["Store_Address"].Value = dr[2].ToString();
-                    dataGridView1.Rows[n].Cells["Store_Phone"].Value = dr[3].ToString();
+                    dataGridView1.Rows[n].Cells["SparePart_ID"].Value = dr[0].ToString();
+                    dataGridView1.Rows[n].Cells["SparePart_Name"].Value = dr[1].ToString();
+                    dataGridView1.Rows[n].Cells["SparePart_Info"].Value = dr[2].ToString();
                 }
                 dr.Close();
             }
@@ -164,5 +174,7 @@ namespace CarsManagment
             }
             dbconnection.Close();
         }
+
+        
     }
 }

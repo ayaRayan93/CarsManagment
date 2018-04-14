@@ -123,6 +123,18 @@
     <Compile Include="SparePart.designer.cs">
       <DependentUpon>SparePart.cs</DependentUpon>
     </Compile>
+    <Compile Include="SparePartRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SparePartRecord.designer.cs">
+      <DependentUpon>SparePartRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SparePartUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SparePartUpdate.designer.cs">
+      <DependentUpon>SparePartUpdate.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Cars.resx">
       <DependentUpon>Cars.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +174,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SparePart.resx">
       <DependentUpon>SparePart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SparePartRecord.resx">
+      <DependentUpon>SparePartRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SparePartUpdate.resx">
+      <DependentUpon>SparePartUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

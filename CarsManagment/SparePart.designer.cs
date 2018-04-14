@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SparePart));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tLPanProductsContainer = new System.Windows.Forms.TableLayoutPanel();
             this.tLPanFilter = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -40,18 +40,18 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.tLPanSearch = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.SparePart_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SparePart_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SparePart_Info = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnDeleteStore = new Bunifu.Framework.UI.BunifuTileButton();
-            this.bunifuTileButton2 = new Bunifu.Framework.UI.BunifuTileButton();
-            this.bunifuTileButton3 = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnDelete = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnUpdate = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnAdd = new Bunifu.Framework.UI.BunifuTileButton();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.SparePart_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SparePart_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SparePart_Info = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tLPanProductsContainer.SuspendLayout();
             this.tLPanFilter.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -204,19 +204,19 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(182)))), ((int)(((byte)(92)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Neo Sans Arabic", 12.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(182)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Neo Sans Arabic", 12.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ColumnHeadersHeight = 35;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SparePart_ID,
@@ -231,13 +231,29 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Neo Sans Arabic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Neo Sans Arabic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.Size = new System.Drawing.Size(548, 320);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // SparePart_ID
+            // 
+            this.SparePart_ID.HeaderText = "الكود";
+            this.SparePart_ID.Name = "SparePart_ID";
+            // 
+            // SparePart_Name
+            // 
+            this.SparePart_Name.HeaderText = "الأسم";
+            this.SparePart_Name.Name = "SparePart_Name";
+            // 
+            // SparePart_Info
+            // 
+            this.SparePart_Info.HeaderText = "بيان";
+            this.SparePart_Info.Name = "SparePart_Info";
+            this.SparePart_Info.Width = 200;
             // 
             // tableLayoutPanel4
             // 
@@ -260,9 +276,9 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutPanel5.Controls.Add(this.btnDeleteStore, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.bunifuTileButton2, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.bunifuTileButton3, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnDelete, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnUpdate, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnAdd, 2, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -271,63 +287,65 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(186, 90);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
-            // btnDeleteStore
+            // btnDelete
             // 
-            this.btnDeleteStore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.btnDeleteStore.color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.btnDeleteStore.colorActive = System.Drawing.Color.Silver;
-            this.btnDeleteStore.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteStore.Font = new System.Drawing.Font("Neo Sans Arabic", 12F);
-            this.btnDeleteStore.ForeColor = System.Drawing.Color.Black;
-            this.btnDeleteStore.Image = global::CarsManagment.Properties.Resources.Trash_48px;
-            this.btnDeleteStore.ImagePosition = 16;
-            this.btnDeleteStore.ImageZoom = 50;
-            this.btnDeleteStore.LabelPosition = 33;
-            this.btnDeleteStore.LabelText = "حذف";
-            this.btnDeleteStore.Location = new System.Drawing.Point(6, 6);
-            this.btnDeleteStore.Margin = new System.Windows.Forms.Padding(6);
-            this.btnDeleteStore.Name = "btnDeleteStore";
-            this.btnDeleteStore.Size = new System.Drawing.Size(49, 78);
-            this.btnDeleteStore.TabIndex = 0;
-            this.btnDeleteStore.Click += new System.EventHandler(this.btnDeleteStore_Click);
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnDelete.color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnDelete.colorActive = System.Drawing.Color.Silver;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.Font = new System.Drawing.Font("Neo Sans Arabic", 12F);
+            this.btnDelete.ForeColor = System.Drawing.Color.Black;
+            this.btnDelete.Image = global::CarsManagment.Properties.Resources.Trash_48px;
+            this.btnDelete.ImagePosition = 16;
+            this.btnDelete.ImageZoom = 50;
+            this.btnDelete.LabelPosition = 33;
+            this.btnDelete.LabelText = "حذف";
+            this.btnDelete.Location = new System.Drawing.Point(6, 6);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(6);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(49, 78);
+            this.btnDelete.TabIndex = 0;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // bunifuTileButton2
+            // btnUpdate
             // 
-            this.bunifuTileButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.bunifuTileButton2.color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.bunifuTileButton2.colorActive = System.Drawing.Color.Silver;
-            this.bunifuTileButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTileButton2.Font = new System.Drawing.Font("Neo Sans Arabic", 12F);
-            this.bunifuTileButton2.ForeColor = System.Drawing.Color.Black;
-            this.bunifuTileButton2.Image = global::CarsManagment.Properties.Resources.Refresh_50px;
-            this.bunifuTileButton2.ImagePosition = 16;
-            this.bunifuTileButton2.ImageZoom = 50;
-            this.bunifuTileButton2.LabelPosition = 33;
-            this.bunifuTileButton2.LabelText = "تعديل";
-            this.bunifuTileButton2.Location = new System.Drawing.Point(67, 6);
-            this.bunifuTileButton2.Margin = new System.Windows.Forms.Padding(6);
-            this.bunifuTileButton2.Name = "bunifuTileButton2";
-            this.bunifuTileButton2.Size = new System.Drawing.Size(51, 78);
-            this.bunifuTileButton2.TabIndex = 1;
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnUpdate.color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnUpdate.colorActive = System.Drawing.Color.Silver;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.Font = new System.Drawing.Font("Neo Sans Arabic", 12F);
+            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdate.Image = global::CarsManagment.Properties.Resources.Refresh_50px;
+            this.btnUpdate.ImagePosition = 16;
+            this.btnUpdate.ImageZoom = 50;
+            this.btnUpdate.LabelPosition = 33;
+            this.btnUpdate.LabelText = "تعديل";
+            this.btnUpdate.Location = new System.Drawing.Point(67, 6);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(6);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(51, 78);
+            this.btnUpdate.TabIndex = 1;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // bunifuTileButton3
+            // btnAdd
             // 
-            this.bunifuTileButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.bunifuTileButton3.color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.bunifuTileButton3.colorActive = System.Drawing.Color.Silver;
-            this.bunifuTileButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTileButton3.Font = new System.Drawing.Font("Neo Sans Arabic", 12F);
-            this.bunifuTileButton3.ForeColor = System.Drawing.Color.Black;
-            this.bunifuTileButton3.Image = global::CarsManagment.Properties.Resources.Add_List_52px;
-            this.bunifuTileButton3.ImagePosition = 16;
-            this.bunifuTileButton3.ImageZoom = 50;
-            this.bunifuTileButton3.LabelPosition = 33;
-            this.bunifuTileButton3.LabelText = "اضافة";
-            this.bunifuTileButton3.Location = new System.Drawing.Point(130, 6);
-            this.bunifuTileButton3.Margin = new System.Windows.Forms.Padding(6);
-            this.bunifuTileButton3.Name = "bunifuTileButton3";
-            this.bunifuTileButton3.Size = new System.Drawing.Size(50, 78);
-            this.bunifuTileButton3.TabIndex = 2;
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnAdd.color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnAdd.colorActive = System.Drawing.Color.Silver;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.Font = new System.Drawing.Font("Neo Sans Arabic", 12F);
+            this.btnAdd.ForeColor = System.Drawing.Color.Black;
+            this.btnAdd.Image = global::CarsManagment.Properties.Resources.Add_List_52px;
+            this.btnAdd.ImagePosition = 16;
+            this.btnAdd.ImageZoom = 50;
+            this.btnAdd.LabelPosition = 33;
+            this.btnAdd.LabelText = "اضافة";
+            this.btnAdd.Location = new System.Drawing.Point(130, 6);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(50, 78);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -408,22 +426,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "قطع الغيار";
             // 
-            // SparePart_ID
-            // 
-            this.SparePart_ID.HeaderText = "الكود";
-            this.SparePart_ID.Name = "SparePart_ID";
-            // 
-            // SparePart_Name
-            // 
-            this.SparePart_Name.HeaderText = "الأسم";
-            this.SparePart_Name.Name = "SparePart_Name";
-            // 
-            // SparePart_Info
-            // 
-            this.SparePart_Info.HeaderText = "بيان";
-            this.SparePart_Info.Name = "SparePart_Info";
-            this.SparePart_Info.Width = 200;
-            // 
             // SparePart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -458,9 +460,9 @@
         private Bunifu.Framework.UI.BunifuCustomDataGrid dataGridView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private Bunifu.Framework.UI.BunifuTileButton btnDeleteStore;
-        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton2;
-        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton3;
+        private Bunifu.Framework.UI.BunifuTileButton btnDelete;
+        private Bunifu.Framework.UI.BunifuTileButton btnUpdate;
+        private Bunifu.Framework.UI.BunifuTileButton btnAdd;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
         private System.Windows.Forms.TextBox txtSearch;
