@@ -61,6 +61,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarSpareParts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarSpareParts.designer.cs">
+      <DependentUpon>CarSpareParts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarLicenseRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarLicenseRecord.Designer.cs">
+      <DependentUpon>CarLicenseRecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cars.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +147,12 @@
     <Compile Include="SparePartUpdate.designer.cs">
       <DependentUpon>SparePartUpdate.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CarSpareParts.resx">
+      <DependentUpon>CarSpareParts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarLicenseRecord.resx">
+      <DependentUpon>CarLicenseRecord.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cars.resx">
       <DependentUpon>Cars.cs</DependentUpon>
     </EmbeddedResource>

@@ -18,7 +18,10 @@ namespace CarsManagment
         DataGridViewRow row1 = null;
         Car_Record carRecord = null;
         Car_Update carUpdate = null;
+
         CarDrivers carDrivers = null;
+        CarLicenseRecord carLicenseRecord = null;
+        CarSpareParts carSpareParts = null;
         public Cars()
         {
             InitializeComponent();
@@ -38,6 +41,7 @@ namespace CarsManagment
             }
             dbconnection.Close();
         }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
@@ -125,6 +129,7 @@ namespace CarsManagment
             dbconnection.Close();
         }
 
+        //second buttons 
         private void CarDraivers_Click(object sender, EventArgs e)
         {
             try
@@ -153,6 +158,62 @@ namespace CarsManagment
                 MessageBox.Show(ex.Message);
             }
 
+        }
+        private void btnCarLicense_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (carLicenseRecord == null)
+                {
+                    if (row1 != null)
+                    {
+                        carLicenseRecord = new CarLicenseRecord(row1);
+                        carLicenseRecord.Show();
+                        carLicenseRecord.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Select row");
+                    }
+                }
+                else
+                {
+                    carLicenseRecord.Show();
+                    carLicenseRecord.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void btnCarSparePart_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (carSpareParts == null)
+                {
+                    if (row1 != null)
+                    {
+                        carSpareParts = new CarSpareParts(row1);
+                        carSpareParts.Show();
+                        carSpareParts.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Select row");
+                    }
+                }
+                else
+                {
+                    carSpareParts.Show();
+                    carSpareParts.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         //functions
         public void DisplayCars()
