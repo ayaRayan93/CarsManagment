@@ -15,8 +15,8 @@ namespace CarsManagment
     {
         MySqlConnection dbconnection;
         DataGridViewRow row1 = null;
-        Driver_Record driverRecord = null;
-        Driver_Update driverUpdate = null;
+        public Driver_Record driverRecord = null;
+        public Driver_Update driverUpdate = null;
         public Drivers()
         {
             InitializeComponent();
@@ -27,7 +27,36 @@ namespace CarsManagment
             try
             {
                 dbconnection.Open();
-                displayDrivers();
+                displayDrivers(dbconnection);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            dbconnection.Close();
+        }
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                dbconnection.Open();
+                dataGridView1.Rows.Clear();
+                string qeury = "select * from drivers where Driver_Name like'" + txtSearch.Text + "%'";
+                MySqlCommand com = new MySqlCommand(qeury, dbconnection);
+                MySqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    int n = dataGridView1.Rows.Add();
+                    dataGridView1.Rows[n].Cells["Driver_ID"].Value = dr[0].ToString();
+                    dataGridView1.Rows[n].Cells["Driver_Name"].Value = dr[1].ToString();
+                    dataGridView1.Rows[n].Cells["Driver_Phone"].Value = dr[2].ToString();
+                    dataGridView1.Rows[n].Cells["Driver_Address"].Value = dr[3].ToString();
+                    dataGridView1.Rows[n].Cells["Driver_BairthDate"].Value = dr[4].ToString();
+                    dataGridView1.Rows[n].Cells["Driver_License"].Value = dr[5].ToString();
+                    dataGridView1.Rows[n].Cells["Driver_NationalID"].Value = dr[6].ToString();
+                    dataGridView1.Rows[n].Cells["Driver_StartWorkDate"].Value = dr[7].ToString();
+                }
+                dr.Close();
             }
             catch (Exception ex)
             {
@@ -41,7 +70,7 @@ namespace CarsManagment
             {
                 if (driverRecord == null)
                 {
-                    driverRecord = new Driver_Record();
+                    driverRecord = new Driver_Record(this);
                     driverRecord.Show();
                     driverRecord.Focus();
                 }
@@ -78,7 +107,7 @@ namespace CarsManagment
                 {
                     if (row1 != null)
                     {
-                        driverUpdate = new Driver_Update(row1);
+                        driverUpdate = new Driver_Update(row1,this);
                         driverUpdate.Show();
                         driverUpdate.Focus();
                     }
@@ -105,10 +134,17 @@ namespace CarsManagment
             {
                 if (row1 != null)
                 {
-                    dbconnection.Open();
-                    string query = "delete from drivers where Driver_ID=" + row1.Cells[0].Value;
-                    MySqlCommand com = new MySqlCommand(query, dbconnection);
-                    com.ExecuteNonQuery();
+                    DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete the item?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        dbconnection.Open();
+                        string query = "delete from drivers where Driver_ID=" + row1.Cells[0].Value;
+                        MySqlCommand com = new MySqlCommand(query, dbconnection);
+                        com.ExecuteNonQuery();
+                        displayDrivers(dbconnection);
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    { }
                 }
                 else
                 {
@@ -122,7 +158,7 @@ namespace CarsManagment
             dbconnection.Close();
         }
         //function
-        public void displayDrivers()
+        public void displayDrivers(MySqlConnection dbconnection)
         {
             dataGridView1.Rows.Clear();
             string qeury = "select * from drivers";

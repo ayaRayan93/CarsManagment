@@ -31,10 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Driver_Update));
             this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panHeader = new System.Windows.Forms.Panel();
-            this.panClose = new System.Windows.Forms.Panel();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.panContent = new System.Windows.Forms.Panel();
             this.dTPWorkStartDate = new System.Windows.Forms.DateTimePicker();
             this.dTPBirthDate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,7 +46,10 @@
             this.txtDriverName = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.panHeader = new System.Windows.Forms.Panel();
+            this.panClose = new System.Windows.Forms.Panel();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.panContent.SuspendLayout();
             this.panHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,64 +63,36 @@
             this.button1.Location = new System.Drawing.Point(118, 202);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(141, 40);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 7;
             this.button1.Text = "تعديل";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.btnUpdateDriver_Click);
             // 
-            // panel1
+            // panContent
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.dTPWorkStartDate);
-            this.panel1.Controls.Add(this.dTPBirthDate);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.txtNationalID);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.txtLicese);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.txtAddress);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txtDriverName);
-            this.panel1.Controls.Add(this.txtPhone);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.panHeader);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(694, 277);
-            this.panel1.TabIndex = 7;
-            // 
-            // panHeader
-            // 
-            this.panHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
-            this.panHeader.Controls.Add(this.panClose);
-            this.panHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panHeader.Location = new System.Drawing.Point(0, 0);
-            this.panHeader.Name = "panHeader";
-            this.panHeader.Size = new System.Drawing.Size(692, 36);
-            this.panHeader.TabIndex = 18;
-            // 
-            // panClose
-            // 
-            this.panClose.BackgroundImage = global::CarsManagment.Properties.Resources.Delete_52px;
-            this.panClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panClose.Location = new System.Drawing.Point(646, 0);
-            this.panClose.Name = "panClose";
-            this.panClose.Size = new System.Drawing.Size(46, 36);
-            this.panClose.TabIndex = 0;
-            this.panClose.Click += new System.EventHandler(this.panClose_Click);
-            // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.panHeader;
-            this.bunifuDragControl1.Vertical = true;
+            this.panContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.panContent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panContent.Controls.Add(this.dTPWorkStartDate);
+            this.panContent.Controls.Add(this.dTPBirthDate);
+            this.panContent.Controls.Add(this.label6);
+            this.panContent.Controls.Add(this.txtNationalID);
+            this.panContent.Controls.Add(this.label1);
+            this.panContent.Controls.Add(this.label4);
+            this.panContent.Controls.Add(this.txtLicese);
+            this.panContent.Controls.Add(this.label5);
+            this.panContent.Controls.Add(this.label8);
+            this.panContent.Controls.Add(this.txtAddress);
+            this.panContent.Controls.Add(this.label3);
+            this.panContent.Controls.Add(this.txtDriverName);
+            this.panContent.Controls.Add(this.txtPhone);
+            this.panContent.Controls.Add(this.label2);
+            this.panContent.Controls.Add(this.panHeader);
+            this.panContent.Controls.Add(this.button1);
+            this.panContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panContent.Location = new System.Drawing.Point(0, 0);
+            this.panContent.Name = "panContent";
+            this.panContent.Size = new System.Drawing.Size(694, 277);
+            this.panContent.TabIndex = 0;
             // 
             // dTPWorkStartDate
             // 
@@ -128,7 +100,7 @@
             this.dTPWorkStartDate.Location = new System.Drawing.Point(83, 158);
             this.dTPWorkStartDate.Name = "dTPWorkStartDate";
             this.dTPWorkStartDate.Size = new System.Drawing.Size(176, 24);
-            this.dTPWorkStartDate.TabIndex = 46;
+            this.dTPWorkStartDate.TabIndex = 6;
             // 
             // dTPBirthDate
             // 
@@ -136,7 +108,7 @@
             this.dTPBirthDate.Location = new System.Drawing.Point(83, 87);
             this.dTPBirthDate.Name = "dTPBirthDate";
             this.dTPBirthDate.Size = new System.Drawing.Size(176, 24);
-            this.dTPBirthDate.TabIndex = 43;
+            this.dTPBirthDate.TabIndex = 4;
             // 
             // label6
             // 
@@ -156,7 +128,7 @@
             this.txtNationalID.Location = new System.Drawing.Point(395, 120);
             this.txtNationalID.Name = "txtNationalID";
             this.txtNationalID.Size = new System.Drawing.Size(176, 23);
-            this.txtNationalID.TabIndex = 39;
+            this.txtNationalID.TabIndex = 1;
             // 
             // label1
             // 
@@ -187,7 +159,7 @@
             this.txtLicese.Location = new System.Drawing.Point(83, 123);
             this.txtLicese.Name = "txtLicese";
             this.txtLicese.Size = new System.Drawing.Size(176, 23);
-            this.txtLicese.TabIndex = 45;
+            this.txtLicese.TabIndex = 5;
             // 
             // label5
             // 
@@ -218,7 +190,7 @@
             this.txtAddress.Location = new System.Drawing.Point(395, 197);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(176, 23);
-            this.txtAddress.TabIndex = 42;
+            this.txtAddress.TabIndex = 3;
             // 
             // label3
             // 
@@ -238,7 +210,7 @@
             this.txtDriverName.Location = new System.Drawing.Point(395, 81);
             this.txtDriverName.Name = "txtDriverName";
             this.txtDriverName.Size = new System.Drawing.Size(176, 23);
-            this.txtDriverName.TabIndex = 38;
+            this.txtDriverName.TabIndex = 0;
             // 
             // txtPhone
             // 
@@ -247,7 +219,7 @@
             this.txtPhone.Location = new System.Drawing.Point(395, 158);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(176, 23);
-            this.txtPhone.TabIndex = 40;
+            this.txtPhone.TabIndex = 2;
             // 
             // label2
             // 
@@ -260,20 +232,48 @@
             this.label2.TabIndex = 41;
             this.label2.Text = "أسم السائق";
             // 
+            // panHeader
+            // 
+            this.panHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
+            this.panHeader.Controls.Add(this.panClose);
+            this.panHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panHeader.Location = new System.Drawing.Point(0, 0);
+            this.panHeader.Name = "panHeader";
+            this.panHeader.Size = new System.Drawing.Size(692, 36);
+            this.panHeader.TabIndex = 18;
+            // 
+            // panClose
+            // 
+            this.panClose.BackgroundImage = global::CarsManagment.Properties.Resources.Delete_52px;
+            this.panClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panClose.Location = new System.Drawing.Point(646, 0);
+            this.panClose.Name = "panClose";
+            this.panClose.Size = new System.Drawing.Size(46, 36);
+            this.panClose.TabIndex = 0;
+            this.panClose.Click += new System.EventHandler(this.panClose_Click);
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panHeader;
+            this.bunifuDragControl1.Vertical = true;
+            // 
             // Driver_Update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 277);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panContent);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(68)))), ((int)(((byte)(154)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Driver_Update";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "تسجيل مخزن";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Text = "تعديل بيانات سائق";
+            this.panContent.ResumeLayout(false);
+            this.panContent.PerformLayout();
             this.panHeader.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -281,7 +281,7 @@
 
         #endregion
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panContent;
         private System.Windows.Forms.Panel panHeader;
         private System.Windows.Forms.Panel panClose;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;

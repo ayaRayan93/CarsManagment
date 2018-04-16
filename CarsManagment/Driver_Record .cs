@@ -14,14 +14,24 @@ namespace CarsManagment
     public partial class Driver_Record : Form
     {
         MySqlConnection dbconnection;
-        public Driver_Record()
+        Drivers drivers;
+        public Driver_Record(Drivers drivers)
         {
-            InitializeComponent();
-            dbconnection = new MySqlConnection(connection.connectionString);
+            try
+            {
+                InitializeComponent();
+                dbconnection = new MySqlConnection(connection.connectionString);
+                this.drivers = drivers;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+          
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAddDriver_Click(object sender, EventArgs e)
         {
            
             try
@@ -56,6 +66,7 @@ namespace CarsManagment
 
                         com.ExecuteNonQuery();
                         MessageBox.Show("add success");
+                        drivers.displayDrivers(dbconnection);
                         clear();
                     }
                     else
@@ -104,16 +115,11 @@ namespace CarsManagment
             }
         }
 
-        //function
-        public void clear()
-        {
-          txtAddress.Text=txtPhone.Text=txtDriverName.Text = "";
-        }
-
         private void panClose_Click(object sender, EventArgs e)
         {
             try
             {
+                drivers.driverRecord = null;
                 this.Close();
             }
             catch (Exception ex)
@@ -121,6 +127,17 @@ namespace CarsManagment
                 MessageBox.Show(ex.Message);
             }
         }
+        //function
+        public void clear()
+        {
+            foreach (Control item in this.Controls["panContent"].Controls)
+            {
+                if (item is TextBox)
+                    item.Text = "";
+            }
+        }
+
+       
     }
    
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Car_Update));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panContent = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panHeader = new System.Windows.Forms.Panel();
             this.panClose = new System.Windows.Forms.Panel();
@@ -38,8 +38,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtMeterReading = new System.Windows.Forms.TextBox();
             this.txtDepreciationPeriod = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comDriver = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCarValue = new System.Windows.Forms.TextBox();
@@ -49,37 +47,35 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.panContent.SuspendLayout();
             this.panHeader.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panContent
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.panHeader);
-            this.panel1.Controls.Add(this.txtPremiumDepreciation);
-            this.panel1.Controls.Add(this.btnCarUpdate);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.txtMeterReading);
-            this.panel1.Controls.Add(this.txtDepreciationPeriod);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.comDriver);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.txtCarValue);
-            this.panel1.Controls.Add(this.txtCarCapacity);
-            this.panel1.Controls.Add(this.txtCarNumber);
-            this.panel1.Controls.Add(this.txtOpenning_Account);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(642, 329);
-            this.panel1.TabIndex = 8;
+            this.panContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.panContent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panContent.Controls.Add(this.label7);
+            this.panContent.Controls.Add(this.panHeader);
+            this.panContent.Controls.Add(this.txtPremiumDepreciation);
+            this.panContent.Controls.Add(this.btnCarUpdate);
+            this.panContent.Controls.Add(this.label8);
+            this.panContent.Controls.Add(this.txtMeterReading);
+            this.panContent.Controls.Add(this.txtDepreciationPeriod);
+            this.panContent.Controls.Add(this.label1);
+            this.panContent.Controls.Add(this.label4);
+            this.panContent.Controls.Add(this.txtCarValue);
+            this.panContent.Controls.Add(this.txtCarCapacity);
+            this.panContent.Controls.Add(this.txtCarNumber);
+            this.panContent.Controls.Add(this.txtOpenning_Account);
+            this.panContent.Controls.Add(this.label3);
+            this.panContent.Controls.Add(this.label5);
+            this.panContent.Controls.Add(this.label6);
+            this.panContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panContent.Location = new System.Drawing.Point(0, 0);
+            this.panContent.Name = "panContent";
+            this.panContent.Size = new System.Drawing.Size(642, 329);
+            this.panContent.TabIndex = 8;
             // 
             // label7
             // 
@@ -111,6 +107,7 @@
             this.panClose.Name = "panClose";
             this.panClose.Size = new System.Drawing.Size(46, 36);
             this.panClose.TabIndex = 0;
+            this.panClose.Click += new System.EventHandler(this.panClose_Click);
             // 
             // txtPremiumDepreciation
             // 
@@ -119,7 +116,8 @@
             this.txtPremiumDepreciation.Location = new System.Drawing.Point(39, 201);
             this.txtPremiumDepreciation.Name = "txtPremiumDepreciation";
             this.txtPremiumDepreciation.Size = new System.Drawing.Size(176, 23);
-            this.txtPremiumDepreciation.TabIndex = 44;
+            this.txtPremiumDepreciation.TabIndex = 6;
+            this.txtPremiumDepreciation.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBox_KeyDown);
             // 
             // btnCarUpdate
             // 
@@ -131,7 +129,7 @@
             this.btnCarUpdate.Location = new System.Drawing.Point(55, 263);
             this.btnCarUpdate.Name = "btnCarUpdate";
             this.btnCarUpdate.Size = new System.Drawing.Size(141, 40);
-            this.btnCarUpdate.TabIndex = 6;
+            this.btnCarUpdate.TabIndex = 7;
             this.btnCarUpdate.Text = "تعديل";
             this.btnCarUpdate.UseVisualStyleBackColor = false;
             this.btnCarUpdate.Click += new System.EventHandler(this.btnCarUpdate_Click);
@@ -141,7 +139,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Neo Sans Arabic", 10F);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
-            this.label8.Location = new System.Drawing.Point(506, 204);
+            this.label8.Location = new System.Drawing.Point(506, 170);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 17);
             this.label8.TabIndex = 43;
@@ -154,37 +152,18 @@
             this.txtMeterReading.Location = new System.Drawing.Point(39, 123);
             this.txtMeterReading.Name = "txtMeterReading";
             this.txtMeterReading.Size = new System.Drawing.Size(176, 23);
-            this.txtMeterReading.TabIndex = 37;
+            this.txtMeterReading.TabIndex = 4;
+            this.txtMeterReading.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBox_KeyDown);
             // 
             // txtDepreciationPeriod
             // 
             this.txtDepreciationPeriod.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDepreciationPeriod.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.txtDepreciationPeriod.Location = new System.Drawing.Point(329, 199);
+            this.txtDepreciationPeriod.Location = new System.Drawing.Point(329, 165);
             this.txtDepreciationPeriod.Name = "txtDepreciationPeriod";
             this.txtDepreciationPeriod.Size = new System.Drawing.Size(176, 23);
-            this.txtDepreciationPeriod.TabIndex = 42;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Neo Sans Arabic", 10F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
-            this.label2.Location = new System.Drawing.Point(508, 126);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 17);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "أسم السائق";
-            // 
-            // comDriver
-            // 
-            this.comDriver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comDriver.FormattingEnabled = true;
-            this.comDriver.Location = new System.Drawing.Point(329, 123);
-            this.comDriver.Name = "comDriver";
-            this.comDriver.Size = new System.Drawing.Size(176, 21);
-            this.comDriver.TabIndex = 41;
-            this.comDriver.SelectedValueChanged += new System.EventHandler(this.comDriver_SelectedValueChanged);
+            this.txtDepreciationPeriod.TabIndex = 2;
+            this.txtDepreciationPeriod.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBox_KeyDown);
             // 
             // label1
             // 
@@ -212,10 +191,11 @@
             // 
             this.txtCarValue.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCarValue.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.txtCarValue.Location = new System.Drawing.Point(329, 160);
+            this.txtCarValue.Location = new System.Drawing.Point(329, 126);
             this.txtCarValue.Name = "txtCarValue";
             this.txtCarValue.Size = new System.Drawing.Size(176, 23);
-            this.txtCarValue.TabIndex = 32;
+            this.txtCarValue.TabIndex = 1;
+            this.txtCarValue.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBox_KeyDown);
             // 
             // txtCarCapacity
             // 
@@ -224,7 +204,8 @@
             this.txtCarCapacity.Location = new System.Drawing.Point(39, 84);
             this.txtCarCapacity.Name = "txtCarCapacity";
             this.txtCarCapacity.Size = new System.Drawing.Size(176, 23);
-            this.txtCarCapacity.TabIndex = 35;
+            this.txtCarCapacity.TabIndex = 3;
+            this.txtCarCapacity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBox_KeyDown);
             // 
             // txtCarNumber
             // 
@@ -233,7 +214,8 @@
             this.txtCarNumber.Location = new System.Drawing.Point(329, 84);
             this.txtCarNumber.Name = "txtCarNumber";
             this.txtCarNumber.Size = new System.Drawing.Size(176, 23);
-            this.txtCarNumber.TabIndex = 30;
+            this.txtCarNumber.TabIndex = 0;
+            this.txtCarNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBox_KeyDown);
             // 
             // txtOpenning_Account
             // 
@@ -242,14 +224,15 @@
             this.txtOpenning_Account.Location = new System.Drawing.Point(39, 162);
             this.txtOpenning_Account.Name = "txtOpenning_Account";
             this.txtOpenning_Account.Size = new System.Drawing.Size(176, 23);
-            this.txtOpenning_Account.TabIndex = 38;
+            this.txtOpenning_Account.TabIndex = 5;
+            this.txtOpenning_Account.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBox_KeyDown);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Neo Sans Arabic", 10F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
-            this.label3.Location = new System.Drawing.Point(506, 165);
+            this.label3.Location = new System.Drawing.Point(506, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(125, 17);
             this.label3.TabIndex = 34;
@@ -282,16 +265,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(642, 329);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panContent);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(68)))), ((int)(((byte)(154)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Car_Update";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تسجيل مخزن";
-            this.Load += new System.EventHandler(this.Car_Update_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panContent.ResumeLayout(false);
+            this.panContent.PerformLayout();
             this.panHeader.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -299,7 +281,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panContent;
         private System.Windows.Forms.Panel panHeader;
         private System.Windows.Forms.Panel panClose;
         private System.Windows.Forms.Button btnCarUpdate;
@@ -308,8 +290,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtMeterReading;
         private System.Windows.Forms.TextBox txtDepreciationPeriod;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comDriver;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCarValue;

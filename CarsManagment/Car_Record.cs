@@ -14,10 +14,12 @@ namespace CarsManagment
     public partial class Car_Record : Form
     {
         MySqlConnection dbconnection;
-        public Car_Record()
+        Cars cars;
+        public Car_Record(Cars cars)
         {
             InitializeComponent();
             dbconnection = new MySqlConnection(connection.connectionString);
+            this.cars = cars;
         }
 
 
@@ -54,18 +56,18 @@ namespace CarsManagment
 
                         com.ExecuteNonQuery();
 
-                        string query1 = "select Car_ID from cars order by Car_ID desc limit 1";
-                        com = new MySqlCommand(query1, dbconnection);
-                        int id =Convert.ToInt32(com.ExecuteScalar());
+                        //string query1 = "select Car_ID from cars order by Car_ID desc limit 1";
+                        //com = new MySqlCommand(query1, dbconnection);
+                        //int id =Convert.ToInt32(com.ExecuteScalar());
 
-                        string query2 = "insert into driver_car (Car_ID,Driver_ID) values (@Car_ID,@Driver_ID)";
-                        MySqlCommand com1 = new MySqlCommand(query2, dbconnection);
-                       
-                        com1.Parameters.AddWithValue("@Car_ID", Convert.ToInt32(id));
-                        com1.Parameters.AddWithValue("@Driver_ID", Convert.ToInt32(comDriver.SelectedValue));
-                     
-                        com1.ExecuteNonQuery();
+                        //string query2 = "insert into driver_car (Car_ID,Driver_ID) values (@Car_ID,@Driver_ID)";
+                        //MySqlCommand com1 = new MySqlCommand(query2, dbconnection);
 
+                        //com1.Parameters.AddWithValue("@Car_ID", Convert.ToInt32(id));
+                        //com1.Parameters.AddWithValue("@Driver_ID", Convert.ToInt32(comDriver.SelectedValue));
+
+                        //com1.ExecuteNonQuery();
+                        cars.DisplayCars(dbconnection);
                         MessageBox.Show("add success");
                         clear();
                     }
@@ -97,7 +99,7 @@ namespace CarsManagment
                     switch (t.Name)
                     {
                         case "txtCarNumber":
-                            comDriver.Focus();
+                            txtCarValue.Focus();
                             break;
                         case "txtCarValue":
                             txtDepreciationPeriod.Focus();
@@ -114,6 +116,9 @@ namespace CarsManagment
                         case "txtOpenning_Account":
                             txtPremiumDepreciation.Focus();
                             break;
+                        case "txtPremiumDepreciation":
+                            btnAdd.Focus();
+                            break;
                     }
                 }
             }
@@ -127,6 +132,7 @@ namespace CarsManagment
         {
             try
             {
+                cars.carRecord = null;
                 this.Close();
             }
             catch (Exception ex)
@@ -138,29 +144,14 @@ namespace CarsManagment
         //function
         public void clear()
         {
-            txtMeterReading.Text=txtCarCapacity.Text=txtDepreciationPeriod.Text=txtCarValue.Text=txtCarNumber.Text = txtPremiumDepreciation.Text = "";
+            foreach (Control item in this.Controls["panContent"].Controls)
+            {
+                if (item is TextBox)
+                    item.Text = "";
+            }
         }
 
-        private void Car_Record_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                dbconnection.Open();
-                string query = "select Driver_ID,Driver_Name from drivers";
-                MySqlDataAdapter da = new MySqlDataAdapter(query, dbconnection);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                comDriver.DataSource = dt;
-                comDriver.DisplayMember = dt.Columns["Driver_Name"].ToString();
-                comDriver.ValueMember = dt.Columns["Driver_ID"].ToString();
-                comDriver.Text = "";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            dbconnection.Close();
-        }
+     
     }
    
 }

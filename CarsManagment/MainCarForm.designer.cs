@@ -30,18 +30,6 @@
         {
             this.tabControlMainContainer = new System.Windows.Forms.TabControl();
             this.tabPageMain = new System.Windows.Forms.TabPage();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.tabPageCar = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanelContent = new System.Windows.Forms.TableLayoutPanel();
-            this.panCarDetailTabs = new System.Windows.Forms.Panel();
-            this.panCarMainTabs = new System.Windows.Forms.Panel();
-            this.btnReport = new System.Windows.Forms.Button();
-            this.btnLost = new System.Windows.Forms.Button();
-            this.btnReturn = new System.Windows.Forms.Button();
-            this.btnImport = new System.Windows.Forms.Button();
-            this.btnGate = new System.Windows.Forms.Button();
-            this.btnCoding = new System.Windows.Forms.Button();
-            this.btnOpeningAcount = new System.Windows.Forms.Button();
             this.bunifuImageButton12 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton10 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton11 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -53,11 +41,21 @@
             this.bunifuImageButton6 = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnCarManagment = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnStore = new Bunifu.Framework.UI.BunifuImageButton();
+            this.tabPageCar = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanelContent = new System.Windows.Forms.TableLayoutPanel();
+            this.panCarDetailTabs = new System.Windows.Forms.Panel();
+            this.panCarMainTabs = new System.Windows.Forms.Panel();
+            this.btnReport = new System.Windows.Forms.Button();
+            this.btnLost = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnImport = new System.Windows.Forms.Button();
+            this.btnGate = new System.Windows.Forms.Button();
+            this.btnCoding = new System.Windows.Forms.Button();
+            this.btnOpeningAcount = new System.Windows.Forms.Button();
             this.tabControlMainContainer.SuspendLayout();
             this.tabPageMain.SuspendLayout();
-            this.tabPageCar.SuspendLayout();
-            this.panCarMainTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton11)).BeginInit();
@@ -70,6 +68,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCarManagment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnStore)).BeginInit();
+            this.tabPageCar.SuspendLayout();
+            this.panCarMainTabs.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMainContainer
@@ -110,207 +110,6 @@
             this.tabPageMain.Size = new System.Drawing.Size(1007, 588);
             this.tabPageMain.TabIndex = 0;
             this.tabPageMain.Text = "الرئيسية";
-            // 
-            // bunifuCustomLabel1
-            // 
-            this.bunifuCustomLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(30)))));
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(819, 27);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(137, 27);
-            this.bunifuCustomLabel1.TabIndex = 21;
-            this.bunifuCustomLabel1.Text = "أدارة السيارات";
-            // 
-            // tabPageCar
-            // 
-            this.tabPageCar.Controls.Add(this.tableLayoutPanelContent);
-            this.tabPageCar.Controls.Add(this.panCarDetailTabs);
-            this.tabPageCar.Controls.Add(this.panCarMainTabs);
-            this.tabPageCar.Location = new System.Drawing.Point(4, 39);
-            this.tabPageCar.Margin = new System.Windows.Forms.Padding(0);
-            this.tabPageCar.Name = "tabPageCar";
-            this.tabPageCar.Size = new System.Drawing.Size(1007, 588);
-            this.tabPageCar.TabIndex = 1;
-            this.tabPageCar.Text = "أدارة السيارات";
-            this.tabPageCar.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanelContent
-            // 
-            this.tableLayoutPanelContent.ColumnCount = 1;
-            this.tableLayoutPanelContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelContent.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanelContent.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanelContent.Name = "tableLayoutPanelContent";
-            this.tableLayoutPanelContent.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tableLayoutPanelContent.RowCount = 1;
-            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.528957F));
-            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 578F));
-            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 578F));
-            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 578F));
-            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 578F));
-            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 578F));
-            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 578F));
-            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 578F));
-            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 578F));
-            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 578F));
-            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 578F));
-            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 578F));
-            this.tableLayoutPanelContent.Size = new System.Drawing.Size(693, 588);
-            this.tableLayoutPanelContent.TabIndex = 3;
-            // 
-            // panCarDetailTabs
-            // 
-            this.panCarDetailTabs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
-            this.panCarDetailTabs.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panCarDetailTabs.Location = new System.Drawing.Point(693, 0);
-            this.panCarDetailTabs.Margin = new System.Windows.Forms.Padding(0);
-            this.panCarDetailTabs.Name = "panCarDetailTabs";
-            this.panCarDetailTabs.Size = new System.Drawing.Size(165, 588);
-            this.panCarDetailTabs.TabIndex = 2;
-            this.panCarDetailTabs.Visible = false;
-            // 
-            // panCarMainTabs
-            // 
-            this.panCarMainTabs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.panCarMainTabs.Controls.Add(this.btnReport);
-            this.panCarMainTabs.Controls.Add(this.btnLost);
-            this.panCarMainTabs.Controls.Add(this.btnReturn);
-            this.panCarMainTabs.Controls.Add(this.btnImport);
-            this.panCarMainTabs.Controls.Add(this.btnGate);
-            this.panCarMainTabs.Controls.Add(this.btnCoding);
-            this.panCarMainTabs.Controls.Add(this.btnOpeningAcount);
-            this.panCarMainTabs.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panCarMainTabs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(147)))), ((int)(((byte)(0)))));
-            this.panCarMainTabs.Location = new System.Drawing.Point(858, 0);
-            this.panCarMainTabs.Margin = new System.Windows.Forms.Padding(0);
-            this.panCarMainTabs.Name = "panCarMainTabs";
-            this.panCarMainTabs.Size = new System.Drawing.Size(149, 588);
-            this.panCarMainTabs.TabIndex = 1;
-            // 
-            // btnReport
-            // 
-            this.btnReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.btnReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReport.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReport.FlatAppearance.BorderSize = 0;
-            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReport.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
-            this.btnReport.Location = new System.Drawing.Point(0, 282);
-            this.btnReport.Margin = new System.Windows.Forms.Padding(0);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(149, 47);
-            this.btnReport.TabIndex = 11;
-            this.btnReport.Text = "التقارير";
-            this.btnReport.UseVisualStyleBackColor = false;
-            // 
-            // btnLost
-            // 
-            this.btnLost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.btnLost.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLost.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLost.FlatAppearance.BorderSize = 0;
-            this.btnLost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLost.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnLost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
-            this.btnLost.Location = new System.Drawing.Point(0, 235);
-            this.btnLost.Margin = new System.Windows.Forms.Padding(0);
-            this.btnLost.Name = "btnLost";
-            this.btnLost.Size = new System.Drawing.Size(149, 47);
-            this.btnLost.TabIndex = 7;
-            this.btnLost.Text = "الهالك";
-            this.btnLost.UseVisualStyleBackColor = false;
-            // 
-            // btnReturn
-            // 
-            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReturn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReturn.FlatAppearance.BorderSize = 0;
-            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReturn.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnReturn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
-            this.btnReturn.Location = new System.Drawing.Point(0, 188);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(149, 47);
-            this.btnReturn.TabIndex = 5;
-            this.btnReturn.Text = "العداد";
-            this.btnReturn.UseVisualStyleBackColor = false;
-            // 
-            // btnImport
-            // 
-            this.btnImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.btnImport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImport.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnImport.FlatAppearance.BorderSize = 0;
-            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImport.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
-            this.btnImport.Location = new System.Drawing.Point(0, 141);
-            this.btnImport.Margin = new System.Windows.Forms.Padding(0);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(149, 47);
-            this.btnImport.TabIndex = 4;
-            this.btnImport.Text = "المصروفات";
-            this.btnImport.UseVisualStyleBackColor = false;
-            // 
-            // btnGate
-            // 
-            this.btnGate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.btnGate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGate.FlatAppearance.BorderSize = 0;
-            this.btnGate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGate.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnGate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
-            this.btnGate.Location = new System.Drawing.Point(0, 94);
-            this.btnGate.Margin = new System.Windows.Forms.Padding(0);
-            this.btnGate.Name = "btnGate";
-            this.btnGate.Size = new System.Drawing.Size(149, 47);
-            this.btnGate.TabIndex = 3;
-            this.btnGate.Text = "العهدة";
-            this.btnGate.UseVisualStyleBackColor = false;
-            // 
-            // btnCoding
-            // 
-            this.btnCoding.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.btnCoding.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCoding.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCoding.FlatAppearance.BorderSize = 0;
-            this.btnCoding.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCoding.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnCoding.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
-            this.btnCoding.Location = new System.Drawing.Point(0, 47);
-            this.btnCoding.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCoding.Name = "btnCoding";
-            this.btnCoding.Size = new System.Drawing.Size(149, 47);
-            this.btnCoding.TabIndex = 2;
-            this.btnCoding.Text = "الايرادات";
-            this.btnCoding.UseVisualStyleBackColor = false;
-            // 
-            // btnOpeningAcount
-            // 
-            this.btnOpeningAcount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.btnOpeningAcount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOpeningAcount.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnOpeningAcount.FlatAppearance.BorderSize = 0;
-            this.btnOpeningAcount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpeningAcount.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnOpeningAcount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
-            this.btnOpeningAcount.Location = new System.Drawing.Point(0, 0);
-            this.btnOpeningAcount.Margin = new System.Windows.Forms.Padding(0);
-            this.btnOpeningAcount.Name = "btnOpeningAcount";
-            this.btnOpeningAcount.Size = new System.Drawing.Size(149, 47);
-            this.btnOpeningAcount.TabIndex = 1;
-            this.btnOpeningAcount.Text = "تكويد السيارة";
-            this.btnOpeningAcount.UseVisualStyleBackColor = false;
-            this.btnOpeningAcount.Click += new System.EventHandler(this.btnCarCoding_Click);
             // 
             // bunifuImageButton12
             // 
@@ -488,6 +287,19 @@
             this.bunifuImageButton2.TabStop = false;
             this.bunifuImageButton2.Zoom = 10;
             // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(30)))));
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(819, 27);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(137, 27);
+            this.bunifuCustomLabel1.TabIndex = 21;
+            this.bunifuCustomLabel1.Text = "أدارة السيارات";
+            // 
             // btnStore
             // 
             this.btnStore.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -505,6 +317,194 @@
             this.btnStore.Zoom = 10;
             this.btnStore.Click += new System.EventHandler(this.btnCarManagment_Click);
             // 
+            // tabPageCar
+            // 
+            this.tabPageCar.Controls.Add(this.tableLayoutPanelContent);
+            this.tabPageCar.Controls.Add(this.panCarDetailTabs);
+            this.tabPageCar.Controls.Add(this.panCarMainTabs);
+            this.tabPageCar.Location = new System.Drawing.Point(4, 39);
+            this.tabPageCar.Margin = new System.Windows.Forms.Padding(0);
+            this.tabPageCar.Name = "tabPageCar";
+            this.tabPageCar.Size = new System.Drawing.Size(1007, 588);
+            this.tabPageCar.TabIndex = 1;
+            this.tabPageCar.Text = "أدارة السيارات";
+            this.tabPageCar.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanelContent
+            // 
+            this.tableLayoutPanelContent.ColumnCount = 1;
+            this.tableLayoutPanelContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelContent.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanelContent.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanelContent.Name = "tableLayoutPanelContent";
+            this.tableLayoutPanelContent.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tableLayoutPanelContent.RowCount = 1;
+            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.528957F));
+            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 588F));
+            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 588F));
+            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 588F));
+            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 588F));
+            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 588F));
+            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 588F));
+            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 588F));
+            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 588F));
+            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 588F));
+            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 588F));
+            this.tableLayoutPanelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 588F));
+            this.tableLayoutPanelContent.Size = new System.Drawing.Size(693, 588);
+            this.tableLayoutPanelContent.TabIndex = 3;
+            // 
+            // panCarDetailTabs
+            // 
+            this.panCarDetailTabs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(211)))), ((int)(((byte)(164)))));
+            this.panCarDetailTabs.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panCarDetailTabs.Location = new System.Drawing.Point(693, 0);
+            this.panCarDetailTabs.Margin = new System.Windows.Forms.Padding(0);
+            this.panCarDetailTabs.Name = "panCarDetailTabs";
+            this.panCarDetailTabs.Size = new System.Drawing.Size(165, 588);
+            this.panCarDetailTabs.TabIndex = 2;
+            this.panCarDetailTabs.Visible = false;
+            // 
+            // panCarMainTabs
+            // 
+            this.panCarMainTabs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.panCarMainTabs.Controls.Add(this.btnReport);
+            this.panCarMainTabs.Controls.Add(this.btnLost);
+            this.panCarMainTabs.Controls.Add(this.btnReturn);
+            this.panCarMainTabs.Controls.Add(this.btnImport);
+            this.panCarMainTabs.Controls.Add(this.btnGate);
+            this.panCarMainTabs.Controls.Add(this.btnCoding);
+            this.panCarMainTabs.Controls.Add(this.btnOpeningAcount);
+            this.panCarMainTabs.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panCarMainTabs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(147)))), ((int)(((byte)(0)))));
+            this.panCarMainTabs.Location = new System.Drawing.Point(858, 0);
+            this.panCarMainTabs.Margin = new System.Windows.Forms.Padding(0);
+            this.panCarMainTabs.Name = "panCarMainTabs";
+            this.panCarMainTabs.Size = new System.Drawing.Size(149, 588);
+            this.panCarMainTabs.TabIndex = 1;
+            // 
+            // btnReport
+            // 
+            this.btnReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.btnReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReport.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReport.FlatAppearance.BorderSize = 0;
+            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReport.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
+            this.btnReport.Location = new System.Drawing.Point(0, 282);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(149, 47);
+            this.btnReport.TabIndex = 11;
+            this.btnReport.Text = "التقارير";
+            this.btnReport.UseVisualStyleBackColor = false;
+            // 
+            // btnLost
+            // 
+            this.btnLost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.btnLost.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLost.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLost.FlatAppearance.BorderSize = 0;
+            this.btnLost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLost.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnLost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
+            this.btnLost.Location = new System.Drawing.Point(0, 235);
+            this.btnLost.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLost.Name = "btnLost";
+            this.btnLost.Size = new System.Drawing.Size(149, 47);
+            this.btnLost.TabIndex = 7;
+            this.btnLost.Text = "الهالك";
+            this.btnLost.UseVisualStyleBackColor = false;
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReturn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReturn.FlatAppearance.BorderSize = 0;
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturn.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnReturn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
+            this.btnReturn.Location = new System.Drawing.Point(0, 188);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(149, 47);
+            this.btnReturn.TabIndex = 5;
+            this.btnReturn.Text = "العداد";
+            this.btnReturn.UseVisualStyleBackColor = false;
+            // 
+            // btnImport
+            // 
+            this.btnImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.btnImport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnImport.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnImport.FlatAppearance.BorderSize = 0;
+            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImport.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
+            this.btnImport.Location = new System.Drawing.Point(0, 141);
+            this.btnImport.Margin = new System.Windows.Forms.Padding(0);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(149, 47);
+            this.btnImport.TabIndex = 4;
+            this.btnImport.Text = "المصروفات";
+            this.btnImport.UseVisualStyleBackColor = false;
+            // 
+            // btnGate
+            // 
+            this.btnGate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.btnGate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGate.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGate.FlatAppearance.BorderSize = 0;
+            this.btnGate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGate.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnGate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
+            this.btnGate.Location = new System.Drawing.Point(0, 94);
+            this.btnGate.Margin = new System.Windows.Forms.Padding(0);
+            this.btnGate.Name = "btnGate";
+            this.btnGate.Size = new System.Drawing.Size(149, 47);
+            this.btnGate.TabIndex = 3;
+            this.btnGate.Text = "العهدة";
+            this.btnGate.UseVisualStyleBackColor = false;
+            // 
+            // btnCoding
+            // 
+            this.btnCoding.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.btnCoding.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCoding.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCoding.FlatAppearance.BorderSize = 0;
+            this.btnCoding.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCoding.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnCoding.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
+            this.btnCoding.Location = new System.Drawing.Point(0, 47);
+            this.btnCoding.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCoding.Name = "btnCoding";
+            this.btnCoding.Size = new System.Drawing.Size(149, 47);
+            this.btnCoding.TabIndex = 2;
+            this.btnCoding.Text = "الايرادات";
+            this.btnCoding.UseVisualStyleBackColor = false;
+            // 
+            // btnOpeningAcount
+            // 
+            this.btnOpeningAcount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.btnOpeningAcount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOpeningAcount.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOpeningAcount.FlatAppearance.BorderSize = 0;
+            this.btnOpeningAcount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpeningAcount.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnOpeningAcount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
+            this.btnOpeningAcount.Location = new System.Drawing.Point(0, 0);
+            this.btnOpeningAcount.Margin = new System.Windows.Forms.Padding(0);
+            this.btnOpeningAcount.Name = "btnOpeningAcount";
+            this.btnOpeningAcount.Size = new System.Drawing.Size(149, 47);
+            this.btnOpeningAcount.TabIndex = 1;
+            this.btnOpeningAcount.Text = "تكويد السيارة";
+            this.btnOpeningAcount.UseVisualStyleBackColor = false;
+            this.btnOpeningAcount.Click += new System.EventHandler(this.btnCarCoding_Click);
+            // 
             // MainCarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -513,11 +513,10 @@
             this.Controls.Add(this.tabControlMainContainer);
             this.Name = "MainCarForm";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainCarForm_FormClosed);
             this.tabControlMainContainer.ResumeLayout(false);
             this.tabPageMain.ResumeLayout(false);
             this.tabPageMain.PerformLayout();
-            this.tabPageCar.ResumeLayout(false);
-            this.panCarMainTabs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton11)).EndInit();
@@ -530,6 +529,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCarManagment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnStore)).EndInit();
+            this.tabPageCar.ResumeLayout(false);
+            this.panCarMainTabs.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

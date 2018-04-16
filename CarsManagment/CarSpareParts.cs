@@ -17,8 +17,8 @@ namespace CarsManagment
         MySqlConnection dbconnection;
         DataGridViewRow CarRow = null,carSparePart=null;
         int CarId;
-
-        public CarSpareParts(DataGridViewRow CarRow)
+        Cars cars;
+        public CarSpareParts(DataGridViewRow CarRow,Cars cars)
         {
             try
             {
@@ -27,6 +27,7 @@ namespace CarsManagment
                 this.CarRow = CarRow;
                 labStoreName.Text = CarRow.Cells[0].Value.ToString();
                 CarId =Convert.ToInt16(CarRow.Cells["car_id"].Value.ToString());
+                this.cars = cars;
 
             }
             catch (Exception ex)
@@ -143,6 +144,7 @@ namespace CarsManagment
         {
             try
             {
+                cars.carSpareParts = null;
                 this.Close();
             }
             catch (Exception ex)

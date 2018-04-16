@@ -15,8 +15,8 @@ namespace CarsManagment
     {
         MySqlConnection dbconnection;
         DataGridViewRow row = null;
-        SparePartRecord sparePartRecord = null;
-        SparePartUpdate sparePartUpdate = null;
+        public SparePartRecord sparePartRecord = null;
+        public SparePartUpdate sparePartUpdate = null;
         public SparePart()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace CarsManagment
             try
             {
                 dbconnection.Open();
-                DisplaySparePart();
+                DisplaySparePart(dbconnection);
             }
             catch (Exception ex)
             {
@@ -41,7 +41,7 @@ namespace CarsManagment
             {
                 if (sparePartRecord == null)
                 {
-                    sparePartRecord = new SparePartRecord();
+                    sparePartRecord = new SparePartRecord(this);
                     sparePartRecord.Show();
                     sparePartRecord.Focus();
                 }
@@ -65,7 +65,7 @@ namespace CarsManagment
                 {
                     if (row != null)
                     {
-                        sparePartUpdate = new SparePartUpdate(row);
+                        sparePartUpdate = new SparePartUpdate(row,this);
                         sparePartUpdate.Show();
                         sparePartUpdate.Focus();
                     }
@@ -100,7 +100,7 @@ namespace CarsManagment
                         MySqlCommand MyCommand = new MySqlCommand(Query, dbconnection);
                         MyCommand.ExecuteNonQuery();
                         // MessageBox.Show("Delete Done");
-                        DisplaySparePart();
+                        DisplaySparePart(dbconnection);
                     }
                     else if (dialogResult == DialogResult.No)
                     { }
@@ -134,7 +134,7 @@ namespace CarsManagment
 
         //functions
         //display stores
-        public void DisplaySparePart()
+        public void DisplaySparePart(MySqlConnection dbconnection)
         {
             dataGridView1.Rows.Clear();
             string qeury = "select * from sparepart";

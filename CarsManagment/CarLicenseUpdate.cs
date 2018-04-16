@@ -11,51 +11,47 @@ using System.Windows.Forms;
 
 namespace CarsManagment
 {
-    public partial class CarLicenseRecord : Form
+    public partial class CarLicenseUpdate : Form
     {
         MySqlConnection dbconnection;
         DataGridViewRow CarRow = null;
         int CarId;
         Cars cars;
-        public CarLicenseRecord(DataGridViewRow CarRow,Cars cars)
+        public CarLicenseUpdate(DataGridViewRow CarRow,Cars cars)
         {
             try
             {
+               
                 InitializeComponent();
                 dbconnection = new MySqlConnection(connection.connectionString);
+                dbconnection.Open();
                 this.CarRow = CarRow;
                 txtCarNumber.Text = CarRow.Cells[0].Value.ToString();
                 CarId = Convert.ToInt16(CarRow.Cells["car_id"].Value.ToString());
-                this.cars = cars;
+                SetData(CarRow);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            dbconnection.Close();
         }
-
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
             try
             {
                 dbconnection.Open();
-                string query = "select Car_License_ID from car_license where Car_ID=" + CarId + "";
-                MySqlCommand com = new MySqlCommand(query, dbconnection);
-
-
-                if (com.ExecuteScalar() == null)
-                {
+               
                     if (txtCarNumber.Text != "")
                     {
-                        string qeury = "insert into car_license (Car_ID,Car_License_Number,Car_Shaza_Number,Car_Model,Car_Company,Start_License_Date,End_License_Date)values(@Car_ID,@Car_License_Number,@Car_Shaza_Number,@Car_Model,@Car_Company,@Start_License_Date,@End_License_Date)";
-                        com = new MySqlCommand(qeury, dbconnection);
-                        com.Parameters.Add("@Car_ID", MySqlDbType.Int16);
-                        com.Parameters["@Car_ID"].Value = CarId;
-                        com.Parameters.Add("@Car_License_Number", MySqlDbType.VarChar,255);
+                        string qeury = "update car_license set Car_License_Number=@Car_License_Number,Car_Shaza_Number=@Car_Shaza_Number,Car_Model=@Car_Model,Car_Company=@Car_Company,Start_License_Date=@Start_License_Date,End_License_Date=@End_License_Date where Car_ID="+CarId;
+                        MySqlCommand com = new MySqlCommand(qeury, dbconnection);
+                        
+                        com.Parameters.Add("@Car_License_Number", MySqlDbType.VarChar, 255);
                         com.Parameters["@Car_License_Number"].Value = txtLicenseNumber.Text;
-                        com.Parameters.Add("@Car_Shaza_Number", MySqlDbType.VarChar,255);
-                        com.Parameters["@Car_Shaza_Number"].Value =txtShaza.Text;
-                        com.Parameters.Add("@Car_Model", MySqlDbType.VarChar,255);
+                        com.Parameters.Add("@Car_Shaza_Number", MySqlDbType.VarChar, 255);
+                        com.Parameters["@Car_Shaza_Number"].Value = txtShaza.Text;
+                        com.Parameters.Add("@Car_Model", MySqlDbType.VarChar, 255);
                         com.Parameters["@Car_Model"].Value = txtModel.Text;
                         com.Parameters.Add("@Car_Company", MySqlDbType.VarChar);
                         com.Parameters["@Car_Company"].Value = txtCarCampany.Text;
@@ -65,19 +61,15 @@ namespace CarsManagment
                         com.Parameters["@End_License_Date"].Value = dateTimePicker2.Value.Date;
 
                         com.ExecuteNonQuery();
-                        
-                        MessageBox.Show("add success");
-                        clear();
+
+                        MessageBox.Show("update success");
+                       
                     }
                     else
                     {
                         MessageBox.Show("enter Car Number");
                     }
-                }
-                else
-                {
-                    MessageBox.Show("This Car already exist");
-                }
+              
 
             }
             catch (Exception ex)
@@ -86,8 +78,18 @@ namespace CarsManagment
             }
             dbconnection.Close();
         }
-
-       
+        private void panClose_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cars.carLicenseUpdate = null;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             try
@@ -110,18 +112,6 @@ namespace CarsManagment
                 MessageBox.Show(ex.Message);
             }
         }
-        private void panClose_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                cars.carLicenseRecord = null;
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
 
         //function
         public void calLicenseAvaliblePeriod()
@@ -129,18 +119,22 @@ namespace CarsManagment
             TimeSpan d = dateTimePicker2.Value.Date - dateTimePicker1.Value.Date;
             labLicenceRestPeriod.Text = d.Days.ToString();
         }
-
-        private void clear()
+        public void SetData(DataGridViewRow row)
         {
-            foreach (Control item in this.Controls["panContent"].Controls)
+            String query = "select Car_License_Number,Car_Shaza_Number,Car_Model,Car_Company,Start_License_Date,End_License_Date,Car_ID from car_license where Car_ID=" + row.Cells["car_id"].Value;
+            MySqlCommand com = new MySqlCommand(query, dbconnection);
+            MySqlDataReader dr = com.ExecuteReader();
+            while (dr.Read())
             {
-                if (item is TextBox)
-                    item.Text = "";
-                else if (item is DateTimePicker)
-                    item.Refresh();
+                txtLicenseNumber.Text = dr["Car_License_Number"].ToString();
+                txtShaza.Text = dr["Car_Shaza_Number"].ToString();
+                txtModel.Text = dr["Car_Model"].ToString();
+                txtCarCampany.Text = dr["Car_Company"].ToString();
+                dateTimePicker1.Text = dr["Start_License_Date"].ToString();
+                dateTimePicker2.Text = dr["End_License_Date"].ToString();
             }
+            dr.Close();
         }
 
-       
     }
 }

@@ -54,7 +54,7 @@
             this.btnAdd = new Bunifu.Framework.UI.BunifuTileButton();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnCarPaper = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnCarLicense = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnCarSparePart = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -192,6 +192,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(162, 23);
             this.txtSearch.TabIndex = 16;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // dataGridView1
             // 
@@ -379,7 +380,7 @@
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.Controls.Add(this.bunifuFlatButton2, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.bunifuFlatButton4, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.btnCarPaper, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.btnCarLicense, 0, 2);
             this.tableLayoutPanel6.Controls.Add(this.btnCarSparePart, 0, 3);
             this.tableLayoutPanel6.Controls.Add(this.bunifuFlatButton3, 0, 5);
@@ -438,43 +439,44 @@
             this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Neo Sans Arabic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton2.Click += new System.EventHandler(this.CarDraivers_Click);
             // 
-            // bunifuFlatButton4
+            // btnCarPaper
             // 
-            this.bunifuFlatButton4.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.bunifuFlatButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.bunifuFlatButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton4.BorderRadius = 0;
-            this.bunifuFlatButton4.ButtonText = "أوراق العربية";
-            this.bunifuFlatButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton4.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuFlatButton4.Font = new System.Drawing.Font("Neo Sans Arabic", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton4.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton4.Iconimage = null;
-            this.bunifuFlatButton4.Iconimage_right = null;
-            this.bunifuFlatButton4.Iconimage_right_Selected = null;
-            this.bunifuFlatButton4.Iconimage_Selected = null;
-            this.bunifuFlatButton4.IconMarginLeft = 0;
-            this.bunifuFlatButton4.IconMarginRight = 0;
-            this.bunifuFlatButton4.IconRightVisible = true;
-            this.bunifuFlatButton4.IconRightZoom = 0D;
-            this.bunifuFlatButton4.IconVisible = true;
-            this.bunifuFlatButton4.IconZoom = 60D;
-            this.bunifuFlatButton4.IsTab = false;
-            this.bunifuFlatButton4.Location = new System.Drawing.Point(0, 33);
-            this.bunifuFlatButton4.Margin = new System.Windows.Forms.Padding(0);
-            this.bunifuFlatButton4.Name = "bunifuFlatButton4";
-            this.bunifuFlatButton4.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.bunifuFlatButton4.OnHovercolor = System.Drawing.Color.Silver;
-            this.bunifuFlatButton4.OnHoverTextColor = System.Drawing.Color.Black;
-            this.bunifuFlatButton4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuFlatButton4.selected = false;
-            this.bunifuFlatButton4.Size = new System.Drawing.Size(214, 33);
-            this.bunifuFlatButton4.TabIndex = 3;
-            this.bunifuFlatButton4.Text = "أوراق العربية";
-            this.bunifuFlatButton4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuFlatButton4.Textcolor = System.Drawing.Color.Black;
-            this.bunifuFlatButton4.TextFont = new System.Drawing.Font("Neo Sans Arabic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCarPaper.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnCarPaper.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnCarPaper.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCarPaper.BorderRadius = 0;
+            this.btnCarPaper.ButtonText = "أوراق العربية";
+            this.btnCarPaper.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCarPaper.DisabledColor = System.Drawing.Color.Gray;
+            this.btnCarPaper.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCarPaper.Font = new System.Drawing.Font("Neo Sans Arabic", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCarPaper.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnCarPaper.Iconimage = null;
+            this.btnCarPaper.Iconimage_right = null;
+            this.btnCarPaper.Iconimage_right_Selected = null;
+            this.btnCarPaper.Iconimage_Selected = null;
+            this.btnCarPaper.IconMarginLeft = 0;
+            this.btnCarPaper.IconMarginRight = 0;
+            this.btnCarPaper.IconRightVisible = true;
+            this.btnCarPaper.IconRightZoom = 0D;
+            this.btnCarPaper.IconVisible = true;
+            this.btnCarPaper.IconZoom = 60D;
+            this.btnCarPaper.IsTab = false;
+            this.btnCarPaper.Location = new System.Drawing.Point(0, 33);
+            this.btnCarPaper.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCarPaper.Name = "btnCarPaper";
+            this.btnCarPaper.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnCarPaper.OnHovercolor = System.Drawing.Color.Silver;
+            this.btnCarPaper.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnCarPaper.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnCarPaper.selected = false;
+            this.btnCarPaper.Size = new System.Drawing.Size(214, 33);
+            this.btnCarPaper.TabIndex = 3;
+            this.btnCarPaper.Text = "أوراق العربية";
+            this.btnCarPaper.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCarPaper.Textcolor = System.Drawing.Color.Black;
+            this.btnCarPaper.TextFont = new System.Drawing.Font("Neo Sans Arabic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCarPaper.Click += new System.EventHandler(this.btnCarPaper_Click);
             // 
             // btnCarLicense
             // 
@@ -659,7 +661,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
+        private Bunifu.Framework.UI.BunifuFlatButton btnCarPaper;
         private Bunifu.Framework.UI.BunifuFlatButton btnCarLicense;
         private System.Windows.Forms.DataGridViewTextBoxColumn Car_Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn Car_Capacity;

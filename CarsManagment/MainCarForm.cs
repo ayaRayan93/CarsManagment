@@ -80,7 +80,17 @@ namespace CarsManagment
                 MessageBox.Show(ex.Message);
             }
         }
-
+        private void MainCarForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                Environment.Exit(0);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         //function
         public void intializeCarCodingPanel()
         {
@@ -175,18 +185,19 @@ namespace CarsManagment
             }
         }
 
+
         //Design Function
         public Panel panStyle(Panel pan)
         {
             pan.Dock = DockStyle.Fill;
-            pan.BackColor = Color.FromArgb(252,169, 41);
+            pan.BackColor = Color.FromArgb(241, 211, 164);
             return pan;
         }
         
         public Button btnStyle(Button btn)
         {
             btn.Dock = DockStyle.Top;
-            btn.BackColor = Color.FromArgb(252, 169, 41);
+            btn.BackColor = Color.FromArgb(241, 211, 164);
             btn.Height= 47;
             btn.FlatStyle = FlatStyle.Flat;
             btn.FlatAppearance.BorderSize = 0;
@@ -199,7 +210,7 @@ namespace CarsManagment
             {
                 if (btn is Button)
                 {
-                    btn.ForeColor = Color.FromArgb(252, 169, 41);
+                    btn.ForeColor = Color.FromArgb(241, 211, 164);
                     btn.BackColor = Color.FromArgb(34, 34, 34);
                 }
             }
@@ -212,7 +223,7 @@ namespace CarsManagment
                 {
                     if (btn is Button)
                     {
-                        btn.BackColor = Color.FromArgb(252,169, 41);
+                        btn.BackColor = Color.FromArgb(241, 211, 164);
                         btn.ForeColor = Color.FromArgb(34, 34, 34);
                     }
                 }
@@ -223,8 +234,8 @@ namespace CarsManagment
     }
     public static class connection
     {
-        // public static string connectionString = "SERVER=192.168.1.200;DATABASE=cccDB;user=Devccc;PASSWORD=rootroot;CHARSET=utf8";
-        public static string connectionString = "SERVER=localhost;DATABASE=cccLocal;user=root;PASSWORD=root;CHARSET=utf8";
+        public static string connectionString = "SERVER=192.168.1.200;DATABASE=cccserver;user=Devccc;PASSWORD=rootroot;CHARSET=utf8";
+       // public static string connectionString = "SERVER=localhost;DATABASE=cccLocal;user=root;PASSWORD=root;CHARSET=utf8";
 
     }
 }

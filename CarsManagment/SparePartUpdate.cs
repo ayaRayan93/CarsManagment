@@ -15,12 +15,14 @@ namespace CarsManagment
     {
         MySqlConnection dbconnection;
         DataGridViewRow row1 = null;
-        public SparePartUpdate(DataGridViewRow row1)
+        SparePart sparePart;
+        public SparePartUpdate(DataGridViewRow row1,SparePart sparePart)
         {
             try
             {
                 InitializeComponent();
                 dbconnection = new MySqlConnection(connection.connectionString);
+                this.sparePart = sparePart;
                 this.row1 = row1;
                 SetData(row1);
             }
@@ -30,7 +32,6 @@ namespace CarsManagment
             }
             dbconnection.Close();
         }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             try
@@ -45,6 +46,7 @@ namespace CarsManagment
                     com.Parameters.Add("@info", MySqlDbType.VarChar, 255).Value = txtInfo.Text;
 
                     com.ExecuteNonQuery();
+                    sparePart.DisplaySparePart(dbconnection);
                     MessageBox.Show("udpate success");
                     txtName.Focus();
                 }
@@ -87,6 +89,7 @@ namespace CarsManagment
         {
             try
             {
+                sparePart.sparePartUpdate = null;
                 this.Close();
             }
             catch (Exception ex)

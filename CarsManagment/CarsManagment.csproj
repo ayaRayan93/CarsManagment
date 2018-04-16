@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarLicenseUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarLicenseUpdate.Designer.cs">
+      <DependentUpon>CarLicenseUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="CarSpareParts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,12 @@
     </Compile>
     <Compile Include="Cars.Designer.cs">
       <DependentUpon>Cars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomTextBox.designer.cs">
+      <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Driver_Update.cs">
       <SubType>Form</SubType>
@@ -103,11 +115,11 @@
     <Compile Include="Drivers.Designer.cs">
       <DependentUpon>Drivers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Login.designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="MainCarForm.cs">
       <SubType>Form</SubType>
@@ -135,6 +147,12 @@
     <Compile Include="SparePart.designer.cs">
       <DependentUpon>SparePart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Car_Papers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Car_Papers.designer.cs">
+      <DependentUpon>Car_Papers.cs</DependentUpon>
+    </Compile>
     <Compile Include="SparePartRecord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +165,10 @@
     <Compile Include="SparePartUpdate.designer.cs">
       <DependentUpon>SparePartUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl.cs" />
+    <EmbeddedResource Include="CarLicenseUpdate.resx">
+      <DependentUpon>CarLicenseUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CarSpareParts.resx">
       <DependentUpon>CarSpareParts.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,8 +190,8 @@
     <EmbeddedResource Include="Drivers.resx">
       <DependentUpon>Drivers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainCarForm.resx">
       <DependentUpon>MainCarForm.cs</DependentUpon>
@@ -192,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SparePart.resx">
       <DependentUpon>SparePart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Car_Papers.resx">
+      <DependentUpon>Car_Papers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SparePartRecord.resx">
       <DependentUpon>SparePartRecord.cs</DependentUpon>

@@ -15,7 +15,8 @@ namespace CarsManagment
     {
         MySqlConnection dbconnection;
         DataGridViewRow row1 = null;
-        public Driver_Update(DataGridViewRow row1)
+        Drivers drivers;
+        public Driver_Update(DataGridViewRow row1,Drivers drivers)
         {
             try
             {
@@ -24,6 +25,7 @@ namespace CarsManagment
                 dbconnection = new MySqlConnection(connection.connectionString);
                 SetData(row1);
                 this.row1 = row1;
+                this.drivers = drivers;
 
             }
             catch (Exception ex)
@@ -32,14 +34,13 @@ namespace CarsManagment
             }
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnUpdateDriver_Click(object sender, EventArgs e)
         {
            
             try
             {
                 dbconnection.Open();
-                string qeury = "update drivers Driver_Name=@Driver_Name,Driver_Phone=@Driver_Phone,Driver_Address=@Driver_Address ,Driver_BairthDate=@Driver_BairthDate,Driver_License=@Driver_License,Driver_NationalID=@Driver_NationalID,Driver_StartWorkDate=@Driver_StartWorkDate where Driver_ID="+row1.Cells[0].Value;
+                string qeury = "update drivers set Driver_Name=@Driver_Name,Driver_Phone=@Driver_Phone,Driver_Address=@Driver_Address ,Driver_BairthDate=@Driver_BairthDate,Driver_License=@Driver_License,Driver_NationalID=@Driver_NationalID,Driver_StartWorkDate=@Driver_StartWorkDate where Driver_ID="+row1.Cells[0].Value;
                 MySqlCommand com = new MySqlCommand(qeury, dbconnection);
                 com.Parameters.Add("@Driver_Name", MySqlDbType.VarChar, 255);
                 com.Parameters["@Driver_Name"].Value = txtDriverName.Text;
@@ -59,7 +60,7 @@ namespace CarsManagment
 
                 com.ExecuteNonQuery();
                 MessageBox.Show("update success");
-              
+                drivers.displayDrivers(dbconnection);
             
             }
             catch (Exception ex)
@@ -73,6 +74,7 @@ namespace CarsManagment
         {
             try
             {
+                drivers.driverUpdate = null;
                 this.Close();
             }
             catch (Exception ex)
@@ -80,10 +82,17 @@ namespace CarsManagment
                 MessageBox.Show(ex.Message);
             }
         }
+        
         //function
         public void clear()
         {
-            txtDriverName.Text=txtPhone.Text=txtAddress.Text="";
+            foreach (Control item in this.Controls["panContent"].Controls)
+            {
+                if (item is TextBox)
+                    item.Text = "";
+                else if (item is DateTimePicker)
+                    item.Text = DateTime.Now.ToString();
+            }
         }
         public void SetData(DataGridViewRow row)
         {
