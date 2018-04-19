@@ -392,11 +392,36 @@ namespace CarsManagment
             Button btn2 = new Button();
             btn2 = btnStyle(btn2);
             btn2.Text = "الأرادات";
+            btn2.Click += BtnCarIncomes_Click;
 
             panCarIncome.Controls.Add(btn2);
             panCarIncome.Controls.Add(btn1);
 
         }
+
+        private void BtnCarIncomes_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                tableLayoutPanelContent.Controls.Clear();
+                resetButtonsStoreDetailsPanelStyle();
+                Button btn = (Button)sender;
+                btn.ForeColor = Color.Black;
+                btn.BackColor = Color.White;
+                CarIncomes objForm = new CarIncomes();
+                objForm.TopLevel = false;
+                tableLayoutPanelContent.Controls.Add(objForm);
+                objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                objForm.Dock = DockStyle.Fill;
+                objForm.Show();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         public void intializeAl3htaPanel()
         {
             panAl3hta = new Panel();

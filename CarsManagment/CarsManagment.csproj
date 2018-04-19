@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarIncomes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarIncomes.Designer.cs">
+      <DependentUpon>CarIncomes.cs</DependentUpon>
+    </Compile>
     <Compile Include="CarLicenseUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,18 @@
     <Compile Include="Drivers.Designer.cs">
       <DependentUpon>Drivers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4.designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +184,9 @@
       <DependentUpon>SparePartUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl.cs" />
+    <EmbeddedResource Include="CarIncomes.resx">
+      <DependentUpon>CarIncomes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CarLicenseUpdate.resx">
       <DependentUpon>CarLicenseUpdate.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +210,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Drivers.resx">
       <DependentUpon>Drivers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form4.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
