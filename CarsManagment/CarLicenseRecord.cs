@@ -16,7 +16,7 @@ namespace CarsManagment
         MySqlConnection dbconnection;
         DataGridViewRow CarRow = null;
         int CarId;
-        Cars cars;
+        Cars cars=null;
         public CarLicenseRecord(DataGridViewRow CarRow,Cars cars)
         {
             try
@@ -114,7 +114,9 @@ namespace CarsManagment
         {
             try
             {
+                if(cars!=null)
                 cars.carLicenseRecord = null;
+
                 this.Close();
             }
             catch (Exception ex)
@@ -126,7 +128,7 @@ namespace CarsManagment
         //function
         public void calLicenseAvaliblePeriod()
         {
-            TimeSpan d = dateTimePicker2.Value.Date - dateTimePicker1.Value.Date;
+            TimeSpan d = dateTimePicker2.Value.Date - DateTime.Now.Date;
             labLicenceRestPeriod.Text = d.Days.ToString();
         }
 

@@ -16,7 +16,7 @@ namespace CarsManagment
         MySqlConnection dbconnection;
         DataGridViewRow CarRow = null;
         int CarId;
-        Cars cars;
+        Cars cars=null;
         public CarLicenseUpdate(DataGridViewRow CarRow,Cars cars)
         {
             try
@@ -29,6 +29,23 @@ namespace CarsManagment
                 txtCarNumber.Text = CarRow.Cells[0].Value.ToString();
                 CarId = Convert.ToInt16(CarRow.Cells["car_id"].Value.ToString());
                 SetData(CarRow);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            dbconnection.Close();
+        }
+        public CarLicenseUpdate(String carNum)
+        {
+            try
+            {
+
+                InitializeComponent();
+                dbconnection = new MySqlConnection(connection.connectionString);
+                dbconnection.Open();
+                txtCarNumber.Text = carNum;
+                SetData(carNum);
             }
             catch (Exception ex)
             {
@@ -82,7 +99,9 @@ namespace CarsManagment
         {
             try
             {
+                if(cars!=null)
                 cars.carLicenseUpdate = null;
+
                 this.Close();
             }
             catch (Exception ex)
@@ -116,12 +135,28 @@ namespace CarsManagment
         //function
         public void calLicenseAvaliblePeriod()
         {
-            TimeSpan d = dateTimePicker2.Value.Date - dateTimePicker1.Value.Date;
+            TimeSpan d = dateTimePicker2.Value.Date - DateTime.Now.Date;
             labLicenceRestPeriod.Text = d.Days.ToString();
         }
         public void SetData(DataGridViewRow row)
         {
             String query = "select Car_License_Number,Car_Shaza_Number,Car_Model,Car_Company,Start_License_Date,End_License_Date,Car_ID from car_license where Car_ID=" + row.Cells["car_id"].Value;
+            MySqlCommand com = new MySqlCommand(query, dbconnection);
+            MySqlDataReader dr = com.ExecuteReader();
+            while (dr.Read())
+            {
+                txtLicenseNumber.Text = dr["Car_License_Number"].ToString();
+                txtShaza.Text = dr["Car_Shaza_Number"].ToString();
+                txtModel.Text = dr["Car_Model"].ToString();
+                txtCarCampany.Text = dr["Car_Company"].ToString();
+                dateTimePicker1.Text = dr["Start_License_Date"].ToString();
+                dateTimePicker2.Text = dr["End_License_Date"].ToString();
+            }
+            dr.Close();
+        }
+        public void SetData(String carNum)
+        {
+            String query = "select Car_License_Number,Car_Shaza_Number,Car_Model,Car_Company,Start_License_Date,End_License_Date from car_license inner join cars on cars.Car_ID=car_license.Car_ID where Car_Number=" + carNum;
             MySqlCommand com = new MySqlCommand(query, dbconnection);
             MySqlDataReader dr = com.ExecuteReader();
             while (dr.Read())

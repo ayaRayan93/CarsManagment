@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainCarForm));
             this.tabControlMainContainer = new System.Windows.Forms.TabControl();
             this.tabPageMain = new System.Windows.Forms.TabPage();
             this.bunifuImageButton12 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -49,11 +51,12 @@
             this.panCarMainTabs = new System.Windows.Forms.Panel();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnLost = new System.Windows.Forms.Button();
-            this.btnReturn = new System.Windows.Forms.Button();
-            this.btnImport = new System.Windows.Forms.Button();
-            this.btnGate = new System.Windows.Forms.Button();
-            this.btnCoding = new System.Windows.Forms.Button();
-            this.btnOpeningAcount = new System.Windows.Forms.Button();
+            this.btnReadingMeter = new System.Windows.Forms.Button();
+            this.btnExpenses = new System.Windows.Forms.Button();
+            this.btnAl3hta = new System.Windows.Forms.Button();
+            this.btnCarIncome = new System.Windows.Forms.Button();
+            this.btnCarCoding = new System.Windows.Forms.Button();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.tabControlMainContainer.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton12)).BeginInit();
@@ -358,7 +361,7 @@
             // 
             // panCarDetailTabs
             // 
-            this.panCarDetailTabs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(211)))), ((int)(((byte)(164)))));
+            this.panCarDetailTabs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.panCarDetailTabs.Dock = System.Windows.Forms.DockStyle.Right;
             this.panCarDetailTabs.Location = new System.Drawing.Point(693, 0);
             this.panCarDetailTabs.Margin = new System.Windows.Forms.Padding(0);
@@ -372,11 +375,11 @@
             this.panCarMainTabs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.panCarMainTabs.Controls.Add(this.btnReport);
             this.panCarMainTabs.Controls.Add(this.btnLost);
-            this.panCarMainTabs.Controls.Add(this.btnReturn);
-            this.panCarMainTabs.Controls.Add(this.btnImport);
-            this.panCarMainTabs.Controls.Add(this.btnGate);
-            this.panCarMainTabs.Controls.Add(this.btnCoding);
-            this.panCarMainTabs.Controls.Add(this.btnOpeningAcount);
+            this.panCarMainTabs.Controls.Add(this.btnReadingMeter);
+            this.panCarMainTabs.Controls.Add(this.btnExpenses);
+            this.panCarMainTabs.Controls.Add(this.btnAl3hta);
+            this.panCarMainTabs.Controls.Add(this.btnCarIncome);
+            this.panCarMainTabs.Controls.Add(this.btnCarCoding);
             this.panCarMainTabs.Dock = System.Windows.Forms.DockStyle.Right;
             this.panCarMainTabs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(147)))), ((int)(((byte)(0)))));
             this.panCarMainTabs.Location = new System.Drawing.Point(858, 0);
@@ -401,6 +404,7 @@
             this.btnReport.TabIndex = 11;
             this.btnReport.Text = "التقارير";
             this.btnReport.UseVisualStyleBackColor = false;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // btnLost
             // 
@@ -416,94 +420,106 @@
             this.btnLost.Name = "btnLost";
             this.btnLost.Size = new System.Drawing.Size(149, 47);
             this.btnLost.TabIndex = 7;
-            this.btnLost.Text = "الهالك";
+            this.btnLost.Text = "الاهلاك";
             this.btnLost.UseVisualStyleBackColor = false;
             // 
-            // btnReturn
+            // btnReadingMeter
             // 
-            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReturn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReturn.FlatAppearance.BorderSize = 0;
-            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReturn.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnReturn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
-            this.btnReturn.Location = new System.Drawing.Point(0, 188);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(149, 47);
-            this.btnReturn.TabIndex = 5;
-            this.btnReturn.Text = "العداد";
-            this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReadingMeter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.btnReadingMeter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReadingMeter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReadingMeter.FlatAppearance.BorderSize = 0;
+            this.btnReadingMeter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReadingMeter.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnReadingMeter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
+            this.btnReadingMeter.Location = new System.Drawing.Point(0, 188);
+            this.btnReadingMeter.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReadingMeter.Name = "btnReadingMeter";
+            this.btnReadingMeter.Size = new System.Drawing.Size(149, 47);
+            this.btnReadingMeter.TabIndex = 5;
+            this.btnReadingMeter.Text = "العداد";
+            this.btnReadingMeter.UseVisualStyleBackColor = false;
+            this.btnReadingMeter.Click += new System.EventHandler(this.btnReadingMeter_Click);
             // 
-            // btnImport
+            // btnExpenses
             // 
-            this.btnImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.btnImport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImport.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnImport.FlatAppearance.BorderSize = 0;
-            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImport.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
-            this.btnImport.Location = new System.Drawing.Point(0, 141);
-            this.btnImport.Margin = new System.Windows.Forms.Padding(0);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(149, 47);
-            this.btnImport.TabIndex = 4;
-            this.btnImport.Text = "المصروفات";
-            this.btnImport.UseVisualStyleBackColor = false;
+            this.btnExpenses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.btnExpenses.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExpenses.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnExpenses.FlatAppearance.BorderSize = 0;
+            this.btnExpenses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExpenses.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnExpenses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
+            this.btnExpenses.Location = new System.Drawing.Point(0, 141);
+            this.btnExpenses.Margin = new System.Windows.Forms.Padding(0);
+            this.btnExpenses.Name = "btnExpenses";
+            this.btnExpenses.Size = new System.Drawing.Size(149, 47);
+            this.btnExpenses.TabIndex = 4;
+            this.btnExpenses.Text = "المصروفات";
+            this.btnExpenses.UseVisualStyleBackColor = false;
+            this.btnExpenses.Click += new System.EventHandler(this.btnExpenses_Click);
             // 
-            // btnGate
+            // btnAl3hta
             // 
-            this.btnGate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.btnGate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGate.FlatAppearance.BorderSize = 0;
-            this.btnGate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGate.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnGate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
-            this.btnGate.Location = new System.Drawing.Point(0, 94);
-            this.btnGate.Margin = new System.Windows.Forms.Padding(0);
-            this.btnGate.Name = "btnGate";
-            this.btnGate.Size = new System.Drawing.Size(149, 47);
-            this.btnGate.TabIndex = 3;
-            this.btnGate.Text = "العهدة";
-            this.btnGate.UseVisualStyleBackColor = false;
+            this.btnAl3hta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.btnAl3hta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAl3hta.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAl3hta.FlatAppearance.BorderSize = 0;
+            this.btnAl3hta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAl3hta.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnAl3hta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
+            this.btnAl3hta.Location = new System.Drawing.Point(0, 94);
+            this.btnAl3hta.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAl3hta.Name = "btnAl3hta";
+            this.btnAl3hta.Size = new System.Drawing.Size(149, 47);
+            this.btnAl3hta.TabIndex = 3;
+            this.btnAl3hta.Text = "العهدة";
+            this.btnAl3hta.UseVisualStyleBackColor = false;
+            this.btnAl3hta.Click += new System.EventHandler(this.btnAl3hta_Click);
             // 
-            // btnCoding
+            // btnCarIncome
             // 
-            this.btnCoding.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.btnCoding.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCoding.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCoding.FlatAppearance.BorderSize = 0;
-            this.btnCoding.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCoding.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnCoding.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
-            this.btnCoding.Location = new System.Drawing.Point(0, 47);
-            this.btnCoding.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCoding.Name = "btnCoding";
-            this.btnCoding.Size = new System.Drawing.Size(149, 47);
-            this.btnCoding.TabIndex = 2;
-            this.btnCoding.Text = "الايرادات";
-            this.btnCoding.UseVisualStyleBackColor = false;
+            this.btnCarIncome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.btnCarIncome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCarIncome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCarIncome.FlatAppearance.BorderSize = 0;
+            this.btnCarIncome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCarIncome.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnCarIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
+            this.btnCarIncome.Location = new System.Drawing.Point(0, 47);
+            this.btnCarIncome.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCarIncome.Name = "btnCarIncome";
+            this.btnCarIncome.Size = new System.Drawing.Size(149, 47);
+            this.btnCarIncome.TabIndex = 2;
+            this.btnCarIncome.Text = "الايرادات";
+            this.btnCarIncome.UseVisualStyleBackColor = false;
+            this.btnCarIncome.Click += new System.EventHandler(this.btnCarIncome_Click);
             // 
-            // btnOpeningAcount
+            // btnCarCoding
             // 
-            this.btnOpeningAcount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.btnOpeningAcount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOpeningAcount.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnOpeningAcount.FlatAppearance.BorderSize = 0;
-            this.btnOpeningAcount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpeningAcount.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnOpeningAcount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
-            this.btnOpeningAcount.Location = new System.Drawing.Point(0, 0);
-            this.btnOpeningAcount.Margin = new System.Windows.Forms.Padding(0);
-            this.btnOpeningAcount.Name = "btnOpeningAcount";
-            this.btnOpeningAcount.Size = new System.Drawing.Size(149, 47);
-            this.btnOpeningAcount.TabIndex = 1;
-            this.btnOpeningAcount.Text = "تكويد السيارة";
-            this.btnOpeningAcount.UseVisualStyleBackColor = false;
-            this.btnOpeningAcount.Click += new System.EventHandler(this.btnCarCoding_Click);
+            this.btnCarCoding.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.btnCarCoding.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCarCoding.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCarCoding.FlatAppearance.BorderSize = 0;
+            this.btnCarCoding.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCarCoding.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnCarCoding.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(169)))), ((int)(((byte)(41)))));
+            this.btnCarCoding.Location = new System.Drawing.Point(0, 0);
+            this.btnCarCoding.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCarCoding.Name = "btnCarCoding";
+            this.btnCarCoding.Size = new System.Drawing.Size(149, 47);
+            this.btnCarCoding.TabIndex = 1;
+            this.btnCarCoding.Text = "تكويد السيارة";
+            this.btnCarCoding.UseVisualStyleBackColor = false;
+            this.btnCarCoding.Click += new System.EventHandler(this.btnCarCoding_Click);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.BalloonTipClicked += new System.EventHandler(this.notifyIcon1_Click);
+            this.notifyIcon1.Click += new System.EventHandler(this.notifyIcon1_Click);
             // 
             // MainCarForm
             // 
@@ -514,6 +530,7 @@
             this.Name = "MainCarForm";
             this.Text = "Form1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainCarForm_FormClosed);
+            this.Load += new System.EventHandler(this.MainCarForm_Load);
             this.tabControlMainContainer.ResumeLayout(false);
             this.tabPageMain.ResumeLayout(false);
             this.tabPageMain.PerformLayout();
@@ -545,11 +562,11 @@
         private System.Windows.Forms.Panel panCarMainTabs;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnLost;
-        private System.Windows.Forms.Button btnReturn;
-        private System.Windows.Forms.Button btnImport;
-        private System.Windows.Forms.Button btnGate;
-        private System.Windows.Forms.Button btnCoding;
-        private System.Windows.Forms.Button btnOpeningAcount;
+        private System.Windows.Forms.Button btnReadingMeter;
+        private System.Windows.Forms.Button btnExpenses;
+        private System.Windows.Forms.Button btnAl3hta;
+        private System.Windows.Forms.Button btnCarIncome;
+        private System.Windows.Forms.Button btnCarCoding;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton12;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton10;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton11;
@@ -563,6 +580,7 @@
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuImageButton btnStore;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 
